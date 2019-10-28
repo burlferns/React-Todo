@@ -10,7 +10,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      toDoList: [
+      toDoList: [ 
         {
           task: 'Organize Garage',
           id: 1528817077286,
