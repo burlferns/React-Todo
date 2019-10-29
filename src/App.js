@@ -22,6 +22,8 @@ class App extends React.Component {
           completed: true,
         }
       ],
+      searchValue: "",
+
     };
   }
 
@@ -59,7 +61,11 @@ class App extends React.Component {
     })    
   }
 
-
+  searchInput = (input) => {
+    this.setState({
+      searchValue: input,
+    })
+  }
 
 
   render() {
@@ -68,11 +74,15 @@ class App extends React.Component {
         <h2>Welcome to your Todo App!</h2>
         <TodoList 
           toDoList={this.state.toDoList} 
+          searchValue={this.state.searchValue}
           strikeToggle={this.strikeToggle}
         />
         <TodoForm
           addNew={this.addNew}
           clearCompleted={this.clearCompleted}
+          searchValue={this.state.searchValue}
+          searchInput={this.searchInput}
+
         />
       </div>
     );
